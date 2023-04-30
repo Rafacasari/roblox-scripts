@@ -202,7 +202,7 @@ if game.PlaceId == 6284583030 or game.PlaceId == 10321372166 or game.PlaceId == 
 	
 	local GetRemoteFunction = debug.getupvalue(Library.Network.Invoke, 2)
 		-- OrbList = debug.getupvalue(orbsScript.Collect, 1)
-	local CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game:WaitForChild("Coins", 10)).UpdateCoins, 2)
+	local CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game:WaitForChild("Coins", 10)).DestroyAllCoins, 1)
 	local RenderedPets = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game:WaitForChild("Pets", 10)).NetworkUpdate, 1)
 	
 	
@@ -940,7 +940,7 @@ if game.PlaceId == 6284583030 or game.PlaceId == 10321372166 or game.PlaceId == 
 		local sortedCoins = {}
 		
 		
-		CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game.Coins).UpdateCoins, 2)
+		CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game.Coins).DestroyAllCoins, 1)
 		
 		for _, coin in pairs(coins) do
 			local coinMesh = coin:FindFirstChild("Coin")
@@ -1051,7 +1051,7 @@ if game.PlaceId == 6284583030 or game.PlaceId == 10321372166 or game.PlaceId == 
 	coroutine.wrap(function()
 		while true do 
 				if enableAutoFarm and not ScriptIsCurrentlyBusy then 
-					CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game.Coins).UpdateCoins, 2)
+					CoinsTable = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game.Coins).DestroyAllCoins, 1)
 					RenderedPets = debug.getupvalue(getsenv(LocalPlayer.PlayerScripts.Scripts.Game.Pets).NetworkUpdate, 1)
 					
 					if AutoFarm_FastMode then 
